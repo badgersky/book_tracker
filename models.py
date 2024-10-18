@@ -12,18 +12,19 @@ class Base(DeclarativeBase):
     pass
 
 
-class Books(Base):
+class Book(Base):
     __tablename__ = "books"
     
     id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(string(255)
+    title: Mapped[str] = mapped_column(String(255))
 
 
 class PageCount(Base):
     __tablename__ = "page_count"
     
-    id: Mappend[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True)
     book_id: Mapped[int] = mapped_column(ForeignKey("books.id"))
+    page: Mapped[int]
 
 
 if __name__ == '__main__':
