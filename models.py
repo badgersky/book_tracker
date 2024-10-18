@@ -24,3 +24,7 @@ class PageCount(Base):
     
     id: Mappend[int] = mapped_column(primary_key=True)
     book_id: Mapped[int] = mapped_column(ForeignKey("books.id"))
+
+
+if __name__ == '__main__':
+    pass
